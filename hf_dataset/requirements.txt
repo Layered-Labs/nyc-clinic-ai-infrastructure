@@ -1,0 +1,7 @@
+pgeocode>=0.4.0
+requests>=2.31.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+tqdm>=4.66.0
+anthropic>=0.40.0          # only needed for tasks_agent/
+beautifulsoup4>=4.12.0     # only needed for tasks_agent/
