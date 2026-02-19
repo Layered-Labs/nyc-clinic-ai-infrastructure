@@ -23,13 +23,13 @@
 
 > **Can a clinic run local AI? This dataset answers that question for every ZIP code in New York City.**
 
-Published by [Layered Labs](https://layeredlabs.ai), a nonprofit building open-source AI tools for community health clinics.
+Published by [Layered Labs](https://layeredlabs.ai), a research lab building open-source AI tools for community health clinics.
 
 ---
 
 ## Overview
 
-Running AI inference locally on clinic hardware — rather than routing data through cloud APIs — keeps patient data on-premise, reduces cost, and enables functionality in low-connectivity environments. But feasibility depends on infrastructure.
+Running AI inference locally on clinic hardware (rather than routing data through cloud APIs) keeps patient data on-premise, reduces cost, and enables functionality in low-connectivity environments. But feasibility depends on infrastructure.
 
 This dataset maps three prerequisites across all 311 NYC ZIP codes:
 
@@ -54,7 +54,7 @@ Con Edison serves all 5 boroughs with exceptional reliability. Running local AI 
 | GPU workstation | Mistral 7B / Llama 3 8B | 350W | **$45.57** |
 | Dual-GPU server | Llama 3 70B | 900W | **$117.17** |
 
-Grid reliability: SAIDI of **14.9 min/yr** (excl. major events) — top-tier nationally.
+Grid reliability: SAIDI of **14.9 min/yr** (excl. major events), top-tier nationally.
 
 ### Broadband is the real barrier
 
@@ -68,7 +68,7 @@ Fixed broadband access varies sharply across boroughs:
 | Staten Island | ~72% | ~8% |
 | **Bronx** | **~66%** | **~14%** |
 
-South Bronx ZIPs (10452, 10454, 10455) sit at **55-63%** fixed broadband — the lowest in the city — while serving some of NYC's most underserved health populations. These are exactly the communities where local, offline-capable AI matters most.
+South Bronx ZIPs (10452, 10454, 10455) sit at **55-63%** fixed broadband, the lowest in the city, while serving some of NYC's most underserved health populations. These are exactly the communities where local, offline-capable AI matters most.
 
 Despite household subscription gaps, **FCC infrastructure coverage is near-universal**: fiber-to-premises is available in 197/197 ZCTAs with FCC data, and the average ZIP has 6 competing ISPs. The gap is a cost and digital equity problem, not an infrastructure one.
 
