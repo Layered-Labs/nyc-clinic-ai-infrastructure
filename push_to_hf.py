@@ -50,8 +50,8 @@ print(f"Logged in as: {api.whoami()['name']}")
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
-ROOT  = pathlib.Path(__file__).parent          # nyc_clinic_infra/hf_dataset/
-SPACE = ROOT.parent / "hf_space"               # nyc_clinic_infra/hf_space/
+ROOT  = pathlib.Path(__file__).parent          # nyc_clinic_infra/
+SPACE = ROOT / "explorer"                      # nyc_clinic_infra/explorer/
 
 DATASET_REPO = f"{HF_ORG}/nyc-clinic-ai-infrastructure"
 SPACE_REPO   = f"{HF_ORG}/nyc-clinic-ai-infra-map"
@@ -80,24 +80,20 @@ def make_substituted_copy(src_dir: pathlib.Path, files_to_patch: list[str]) -> p
 print(f"\n── Dataset: {DATASET_REPO}")
 api.create_repo(DATASET_REPO, repo_type="dataset", exist_ok=True, private=False)
 
-tmp_dataset = make_substituted_copy(ROOT, ["README.md"])
+tmp_dataset = make_substituted_copy(ROOT / "pipeline", ["README.md"])
 try:
-    # Upload pipeline scripts + readme
     api.upload_folder(
         folder_path=str(tmp_dataset),
         repo_id=DATASET_REPO,
         repo_type="dataset",
         ignore_patterns=[
-            "requested/**", "cache/**", "*.html", "tasks_agent/**",
-            "space/**", "outputs/**", "**/__pycache__/**", "**/*.pyc",
-            ".gitignore", ".env", ".env.example", ".env.local",
-            "push_to_hf.py",
+            "requested/**", "cache/**", "**/__pycache__/**", "**/*.pyc",
+            ".env", ".env.example", ".env.local",
         ],
         commit_message="Update dataset scripts and README",
     )
-    # Upload the CSV separately from outputs/
     api.upload_file(
-        path_or_fileobj=str(ROOT / "outputs" / "nyc_clinic_infrastructure.csv"),
+        path_or_fileobj=str(ROOT / "pipeline" / "outputs" / "nyc_clinic_infrastructure.csv"),
         path_in_repo="nyc_clinic_infrastructure.csv",
         repo_id=DATASET_REPO,
         repo_type="dataset",
