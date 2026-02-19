@@ -14,7 +14,7 @@ evaluate whether a clinic can run local AI models on-premise:
 Output: outputs/nyc_clinic_infrastructure.csv
 
 Setup:
-  pip install -r requirements_dataset.txt
+  pip install -r requirements.txt
   export EIA_API_KEY=your_key     # optional — https://www.eia.gov/opendata/register.php
   export CENSUS_API_KEY=your_key  # optional — https://api.census.gov/data/key_signup.html
 
